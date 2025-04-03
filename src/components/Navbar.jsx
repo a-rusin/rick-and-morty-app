@@ -1,18 +1,16 @@
 import { NavLink } from "react-router-dom";
-import { internalPaths } from "../constants/internalPaths";
+import { navBarPath } from "../constants/navBarPaths";
 
 export function Navbar() {
-  console.log(internalPaths);
-
   return (
     <ul className="header-menu">
       <li>
-        <NavLink to={internalPaths.home} className="menu-item">
+        <NavLink to={navBarPath.home} className="menu-item">
           Главная
         </NavLink>
       </li>
       <li>
-        <NavLink to={internalPaths.category} className="menu-item">
+        <NavLink to={navBarPath.category} className="menu-item">
           Категории
         </NavLink>
       </li>

@@ -1,4 +1,4 @@
-export const internalPaths = {
+export const navBarPath = {
   home: "/",
   category: "/category",
 };

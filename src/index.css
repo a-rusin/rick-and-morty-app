@@ -83,3 +83,7 @@ body {
 .category-menu-url.active {
   background-color: rgba(0, 0, 0, 0.15);
 }
+
+.category-content {
+  padding-top: 20px;
+}
