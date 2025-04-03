@@ -87,3 +87,33 @@ body {
 .category-content {
   padding-top: 20px;
 }
+
+.caterogy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.caterogy-list-item {
+  padding: 16px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+}
+
+.category-list-item-avatar {
+  display: block;
+  max-width: 100px;
+}
+
+.caterogy-list-item-btn {
+  border: none;
+  padding: 0 18px;
+  height: 34px;
+  background-color: rgb(34, 139, 230);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}

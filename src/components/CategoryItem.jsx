@@ -1,18 +1,39 @@
-import { useEffect } from "react";
-import { Navigate, useParams } from "react-router-dom";
-import characters from "../data/characters.json";
-import locations from "../data/location.json";
-import episodes from "../data/episode.json";
-import { categoriesPath } from "../constants/categoriesPath";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import * as data from "../data/index";
+
+import { generateMarkUp } from "../utils/generateMarkUp";
 
 export function CategoryItem() {
   const { category } = useParams();
 
-  const isCategoryExist = categoriesPath[category];
+  const categoryData = data[category];
 
-  if (!isCategoryExist) {
+  const navigate = useNavigate();
+
+  if (!categoryData) {
     return <Navigate to="/404" />;
   }
 
-  return <div>CategoryItem: {category}</div>;
+  const handleClick = (id) => {
+    navigate(`/category/${category}/${id}`);
+  };
+
+  return (
+    <ul className="caterogy-list">
+      {categoryData.map((item, indexItem) => {
+        let elem = generateMarkUp(item, indexItem);
+        return (
+          <li key={item.id} className="caterogy-list-item">
+            {elem}
+            <button
+              className="caterogy-list-item-btn"
+              onClick={() => handleClick(item.id)}
+            >
+              Подробнее
+            </button>
+          </li>
+        );
+      })}
+    </ul>
+  );
 }

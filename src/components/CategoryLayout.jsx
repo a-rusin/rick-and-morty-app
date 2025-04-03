@@ -12,6 +12,7 @@ export function CategoryLaout({}) {
           <NavLink
             to={"/category" + categoriesPath.characters}
             className="category-menu-url"
+            end
           >
             Персонажи
           </NavLink>
@@ -20,6 +21,7 @@ export function CategoryLaout({}) {
           <NavLink
             to={"/category" + categoriesPath.episodes}
             className="category-menu-url"
+            end
           >
             Эпизоды
           </NavLink>
@@ -28,6 +30,7 @@ export function CategoryLaout({}) {
           <NavLink
             to={"/category" + categoriesPath.locations}
             className="category-menu-url"
+            end
           >
             Локации
           </NavLink>
