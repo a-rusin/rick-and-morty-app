@@ -5,10 +5,16 @@ export function Navbar() {
   console.log(internalPaths);
 
   return (
-    <ul>
+    <ul className="header-menu">
       <li>
-        <NavLink to={internalPaths.home}>Главная</NavLink>
-        <NavLink to={internalPaths.category}>Категории</NavLink>
+        <NavLink to={internalPaths.home} className="menu-item">
+          Главная
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to={internalPaths.category} className="menu-item">
+          Категории
+        </NavLink>
       </li>
     </ul>
   );

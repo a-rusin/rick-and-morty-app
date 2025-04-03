@@ -7,11 +7,11 @@ import { NotFound } from "./page/NotFound";
 function App() {
   return (
     <>
-      <header>
+      <header className="header">
         <Navbar />
       </header>
 
-      <main>
+      <main className="content">
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/category/*" element={<CategoryRoutes />} />

@@ -1,4 +1,85 @@
+:root {
+  --main-container-width: 900px;
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.header-menu {
+  display: flex;
+  gap: 20px;
+  max-width: var(--main-container-width);
+  margin: 0 auto;
+}
+
+.menu-item {
+  font-size: 18px;
+  color: #000;
+  opacity: 0.3;
+}
+
+.menu-item:hover {
+  opacity: 0.6;
+}
+
+.menu-item.active {
+  opacity: 1;
+}
+
+.content {
+  max-width: var(--main-container-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-name-title {
+  font-size: 32px;
+}
+
+.category-menu {
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.category-menu-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.category-menu-url {
+  font-size: 18px;
+  color: #000;
+  padding: 20px 10px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.category-menu-url:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.category-menu-url.active {
+  background-color: rgba(0, 0, 0, 0.15);
 }

@@ -1,3 +1,3 @@
 export function NotFound() {
-  return <div>NotFound Page</div>;
+  return <h1 className="page-name-title">Упс... Ничего не найдено</h1>;
 }
