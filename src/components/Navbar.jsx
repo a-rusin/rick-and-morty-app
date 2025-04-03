@@ -3,17 +3,25 @@ import { navBarPath } from "../constants/navBarPaths";
 
 export function Navbar() {
   return (
-    <ul className="header-menu">
-      <li>
-        <NavLink to={navBarPath.home} className="menu-item">
-          Главная
+    <div className="header-menu">
+      <div className="left-part">
+        <div>
+          <NavLink to={navBarPath.home} className="menu-item">
+            Главная
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to={navBarPath.category} className="menu-item">
+            Категории
+          </NavLink>
+        </div>
+      </div>
+      <div className="right-part">
+        {" "}
+        <NavLink to={navBarPath.login} className="menu-item">
+          Авторизация
         </NavLink>
-      </li>
-      <li>
-        <NavLink to={navBarPath.category} className="menu-item">
-          Категории
-        </NavLink>
-      </li>
-    </ul>
+      </div>
+    </div>
   );
 }
