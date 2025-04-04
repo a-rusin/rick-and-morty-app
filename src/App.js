@@ -3,6 +3,8 @@ import { Navbar } from "./components/Navbar";
 import { Main } from "./page/Main";
 import { CategoryRoutes } from "./routes/CategoryRoutes";
 import { NotFound } from "./page/NotFound";
+import { Login } from "./page/Login";
+import { ProtectedRoutes } from "./components/ProtectedRoutes";
 
 function App() {
   return (
@@ -14,7 +16,15 @@ function App() {
       <main className="content">
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/category/*" element={<CategoryRoutes />} />
+          <Route
+            path="/category/*"
+            element={
+              <ProtectedRoutes>
+                <CategoryRoutes />
+              </ProtectedRoutes>
+            }
+          />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
