@@ -176,3 +176,10 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+
+.error-message-boundary {
+  padding: 20px 10px;
+  border: 1px solid #fa5252;
+  color: #fa5252;
+  border-radius: 12px;
+}

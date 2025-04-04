@@ -9,13 +9,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 export function Login({}) {
   const [isLoginForm, setIsLoginForm] = useState(true);
 
-  const { signIn, register } = useAuth();
+  const { signIn, register, user } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    navigate("/");
+    if (user) {
+      navigate("/");
+    }
   }, []);
 
   const onSubmit = (data) => {

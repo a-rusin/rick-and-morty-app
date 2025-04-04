@@ -11,8 +11,6 @@ const Component = (folder, name) => {
 export function LazyComponent(props) {
   const NewComponent = Component(props.folder, props.name);
 
-  console.log(props);
-
   return (
     <Suspense fallback="Загрузка компонента...">
       <NewComponent {...props} />
