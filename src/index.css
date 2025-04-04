@@ -113,6 +113,11 @@ body {
   max-width: 100px;
 }
 
+.category-list-item-url {
+  text-decoration: underline;
+  color: #000;
+}
+
 .caterogy-list-item-btn {
   border: none;
   padding: 0 18px;
