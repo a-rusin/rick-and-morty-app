@@ -43,7 +43,6 @@ export function AuthProvider({ children }) {
 
   const register = (data, callback) => {
     usersRef.current = [...usersRef.current, data];
-    console.log(usersRef.current);
     localStorage.setItem(
       localStorageUsersKey,
       JSON.stringify(usersRef.current)

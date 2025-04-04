@@ -1,10 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import { Main } from "./page/Main";
-import { CategoryRoutes } from "./routes/CategoryRoutes";
-import { NotFound } from "./page/NotFound";
-import { Login } from "./page/Login";
 import { ProtectedRoutes } from "./components/ProtectedRoutes";
+import { LazyComponent } from "./components/LazyComponent";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
@@ -14,19 +12,30 @@ function App() {
       </header>
 
       <main className="content">
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route
-            path="/category/*"
-            element={
-              <ProtectedRoutes>
-                <CategoryRoutes />
-              </ProtectedRoutes>
-            }
-          />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route
+              path="/"
+              element={<LazyComponent folder="page" name="Main" />}
+            />
+            <Route
+              path="/category/*"
+              element={
+                <ProtectedRoutes>
+                  <LazyComponent folder="routes" name="CategoryRoutes" />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/login"
+              element={<LazyComponent folder="page" name="Login" />}
+            />
+            <Route
+              path="*"
+              element={<LazyComponent folder="page" name="NotFound" />}
+            />
+          </Routes>
+        </ErrorBoundary>
       </main>
     </>
   );

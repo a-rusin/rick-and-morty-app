@@ -1,6 +1,6 @@
 import { TextInput } from "@mantine/core";
 import { IconAt } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import { useAuth } from "../context/authContext";
@@ -9,10 +9,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 export function Login({}) {
   const [isLoginForm, setIsLoginForm] = useState(true);
 
-  const { signIn, register } = useAuth();
+  const { signIn, register, user } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, []);
 
   const onSubmit = (data) => {
     if (isLoginForm) {

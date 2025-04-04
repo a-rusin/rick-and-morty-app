@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { categoriesPath } from "../constants/categoriesPath";
 
-export function CategoryLaout({}) {
+export function CategoryLayout({}) {
   return (
     <>
       <h1 className="page-name-title">Страница категорий</h1>

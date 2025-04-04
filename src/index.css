@@ -22,7 +22,7 @@ body {
 }
 
 .header {
-  padding: 20px;
+  padding: 20px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -32,6 +32,7 @@ body {
   max-width: var(--main-container-width);
   margin: 0 auto;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 .left-part {
@@ -112,6 +113,11 @@ body {
   max-width: 100px;
 }
 
+.category-list-item-url {
+  text-decoration: underline;
+  color: #000;
+}
+
 .caterogy-list-item-btn {
   border: none;
   padding: 0 18px;
@@ -174,4 +180,11 @@ body {
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.error-message-boundary {
+  padding: 20px 10px;
+  border: 1px solid #fa5252;
+  color: #fa5252;
+  border-radius: 12px;
 }
