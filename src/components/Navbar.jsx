@@ -1,7 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { navBarPath } from "../constants/navBarPaths";
+import { useAuth } from "../context/authContext";
+import { IconUser } from "@tabler/icons-react";
 
 export function Navbar() {
+  const { user, logOut } = useAuth();
+
+  const navigate = useNavigate();
+
+  const handleClickLogOut = () => {
+    logOut(() => {
+      navigate("/");
+    });
+  };
+
+  const ImgUser = <IconUser size={16} />;
+
   return (
     <div className="header-menu">
       <div className="left-part">
@@ -17,10 +31,19 @@ export function Navbar() {
         </div>
       </div>
       <div className="right-part">
-        {" "}
-        <NavLink to={navBarPath.login} className="menu-item">
-          Авторизация
-        </NavLink>
+        {user ? (
+          <div className="user-info">
+            {user.name}
+            {ImgUser}
+            <button className="user-sign-out" onClick={handleClickLogOut}>
+              Выйти
+            </button>
+          </div>
+        ) : (
+          <NavLink to={navBarPath.login} className="menu-item">
+            Авторизация
+          </NavLink>
+        )}
       </div>
     </div>
   );

@@ -160,3 +160,18 @@ body {
   cursor: pointer;
   text-decoration: underline;
 }
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.user-sign-out {
+  border: none;
+  padding: 0 18px;
+  background-color: #fa5252;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}

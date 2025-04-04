@@ -5,6 +5,7 @@ import { MantineProvider, createTheme } from "@mantine/core";
 import App from "./App";
 import "./index.css";
 import "@mantine/core/styles.css";
+import { AuthProvider } from "./context/authContext";
 
 const theme = createTheme({});
 
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <MantineProvider theme={theme}>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </MantineProvider>
   </BrowserRouter>
 );

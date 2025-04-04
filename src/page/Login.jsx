@@ -3,12 +3,28 @@ import { IconAt } from "@tabler/icons-react";
 import { useState } from "react";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
+import { useAuth } from "../context/authContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function Login({}) {
   const [isLoginForm, setIsLoginForm] = useState(true);
 
+  const { signIn, register } = useAuth();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const onSubmit = (data) => {
-    console.log(data);
+    if (isLoginForm) {
+      signIn(data, () => {
+        const navTo = location.state ? location.state.from : "/";
+        navigate(navTo);
+      });
+    } else {
+      register(data, () => {
+        setIsLoginForm(true);
+      });
+    }
   };
 
   return (
