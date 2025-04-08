@@ -1,12 +1,13 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { categoriesPath } from "../constants/categoriesPath";
 
-export function CategoryLayout({}) {
+export function CategoryLayout() {
   return (
     <>
       <h1 className="page-name-title">Страница категорий</h1>
       <br />
       <p>Выберите категорию</p>
+
       <ul className="category-menu">
         <li className="category-menu-item">
           <NavLink

@@ -16,22 +16,14 @@ li {
   list-style: none;
 }
 
-body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
 .header {
   padding: 20px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .header-menu {
-  display: flex;
-  gap: 20px;
   max-width: var(--main-container-width);
   margin: 0 auto;
-  justify-content: space-between;
   padding: 0 20px;
 }
 
@@ -165,12 +157,6 @@ body {
 .change-mode span {
   cursor: pointer;
   text-decoration: underline;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 2px;
 }
 
 .user-sign-out {
