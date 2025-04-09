@@ -6,6 +6,7 @@ import App from "./App";
 import "./index.css";
 import "@mantine/core/styles.css";
 import { AuthProvider } from "./context/authContext";
+import * as serviceWorkerRegistration from "./services/serviceWorker.service";
 
 const theme = createTheme({});
 
@@ -19,3 +20,5 @@ root.render(
     </MantineProvider>
   </BrowserRouter>
 );
+
+serviceWorkerRegistration.LocalServiceWorkerRegister();
